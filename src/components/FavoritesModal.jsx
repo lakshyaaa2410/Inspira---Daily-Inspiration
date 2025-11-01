@@ -1,5 +1,8 @@
 import React from "react";
 
+const buttonStyle =
+	"px-8 py-2 border-2 border-black dark:border-white uppercase bg-white text-black dark:bg-black dark:text-white transition-transform duration-200 text-sm cursor-pointer focus:outline-none shadow-[1px_1px_0_rgba(0,0,0,1),2px_2px_0_rgba(0,0,0,1),3px_3px_0_rgba(0,0,0,1),4px_4px_0_rgba(0,0,0,1),5px_5px_0_rgba(0,0,0,1)] dark:shadow-[1px_1px_0_rgba(255,255,255,1),2px_2px_0_rgba(255,255,255,1),3px_3px_0_rgba(255,255,255,1),4px_4px_0_rgba(255,255,255,1),5px_5px_0_rgba(255,255,255,1)] hover:scale-105 focus:scale-105";
+
 export default function FavoritesModal({ data, onModalClose, onClearAll }) {
 	return (
 		<div className="fixed inset-0 bg-amber-200 bg-opacity-10 flex justify-center items-center z-50">
@@ -29,10 +32,7 @@ export default function FavoritesModal({ data, onModalClose, onClearAll }) {
 						No Favorite Quotes Yet
 					</div>
 				)}
-				<button
-					className={`my-2 ${import.meta.env.VITE_BUTTON_STYLE}`}
-					onClick={onClearAll}
-				>
+				<button className={`my-2 ${buttonStyle}`} onClick={onClearAll}>
 					Clear All
 				</button>
 			</div>

@@ -3,6 +3,9 @@ import { useState, useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import FavoritesModal from "./components/FavoritesModal";
 
+const buttonStyle =
+	"px-8 py-2 border-2 border-black dark:border-white uppercase bg-white text-black dark:bg-black dark:text-white transition-transform duration-200 text-sm cursor-pointer focus:outline-none shadow-[1px_1px_0_rgba(0,0,0,1),2px_2px_0_rgba(0,0,0,1),3px_3px_0_rgba(0,0,0,1),4px_4px_0_rgba(0,0,0,1),5px_5px_0_rgba(0,0,0,1)] dark:shadow-[1px_1px_0_rgba(255,255,255,1),2px_2px_0_rgba(255,255,255,1),3px_3px_0_rgba(255,255,255,1),4px_4px_0_rgba(255,255,255,1),5px_5px_0_rgba(255,255,255,1)] hover:scale-105 focus:scale-105";
+
 export default function App() {
 	const [quote, setQuote] = useState(
 		"Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that."
@@ -125,26 +128,17 @@ export default function App() {
 			</div>
 
 			<div className="mt-6 flex space-x-4">
-				<button
-					className={`${import.meta.env.VITE_BUTTON_STYLE}`}
-					onClick={getNewQuote}
-				>
+				<button className={`${buttonStyle}`} onClick={getNewQuote}>
 					New Quote
 				</button>
-				<button
-					className={`${import.meta.env.VITE_BUTTON_STYLE}`}
-					onClick={copyToClipboard}
-				>
+				<button className={`${buttonStyle}`} onClick={copyToClipboard}>
 					Copy Quote
 				</button>
-				<button
-					className={`${import.meta.env.VITE_BUTTON_STYLE}`}
-					onClick={listenQuote}
-				>
+				<button className={`${buttonStyle}`} onClick={listenQuote}>
 					Listen
 				</button>{" "}
 				<button
-					className={`${import.meta.env.VITE_BUTTON_STYLE}`}
+					className={`${buttonStyle}`}
 					onClick={() => setShowFavroites(!showFavroites)}
 				>
 					Favroites
